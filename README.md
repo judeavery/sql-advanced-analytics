@@ -4,7 +4,7 @@ This repository contains an in-progress SQL business analytics project designed 
 
 The goal of this project is to demonstrate how SQL is used in real-world analytics and data engineering workflows — including schema design, data modeling, complex querying, and answering business-driven questions — rather than simple textbook examples.
 
-> Status: 🚧 Actively under development  
+> Status: Actively under development  
 > New tables, data, and queries are being added incrementally.
 
 ---
