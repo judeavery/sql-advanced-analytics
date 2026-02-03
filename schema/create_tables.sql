@@ -4,7 +4,7 @@
 
 BEGIN;
 
--- Optional: keep everything in a dedicated schema
+
 CREATE SCHEMA IF NOT EXISTS retail;
 SET search_path TO retail;
 
@@ -45,11 +45,11 @@ CREATE TABLE IF NOT EXISTS order_items (
     quantity         INTEGER NOT NULL CHECK (quantity > 0),
     unit_price       NUMERIC(10,2) NOT NULL CHECK (unit_price >= 0),
 
-    -- helps prevent duplicate product lines for same order (optional but good)
+    -- helps prevent duplicate product lines for same order
     UNIQUE (order_id, product_id)
 );
 
--- 5) Payments (optional for analytics but very useful)
+-- 5) Payments
 CREATE TABLE IF NOT EXISTS payments (
     payment_id       BIGSERIAL PRIMARY KEY,
     order_id         BIGINT NOT NULL UNIQUE REFERENCES orders(order_id) ON DELETE CASCADE,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS payments (
                      CHECK (payment_status IN ('completed','failed','refunded'))
 );
 
--- Helpful indexes (resume-signal + performance basics)
+-- Helpful indexes 
 CREATE INDEX IF NOT EXISTS idx_orders_customer_id ON orders(customer_id);
 CREATE INDEX IF NOT EXISTS idx_orders_order_ts ON orders(order_ts);
 CREATE INDEX IF NOT EXISTS idx_order_items_order_id ON order_items(order_id);
