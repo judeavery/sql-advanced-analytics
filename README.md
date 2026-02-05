@@ -58,7 +58,7 @@ Queries in this repository will explore questions like:
 
 - **SQL** (PostgreSQL-style syntax)
 - **Local database** (PostgreSQL)
-- **Python** for synthetic data generation
+
 
 
 
