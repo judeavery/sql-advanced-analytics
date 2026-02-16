@@ -47,7 +47,7 @@ Queries in this repository will explore questions like:
 - Top customers by lifetime value
 - Repeat vs one-time customer behavior
 - Product performance over time
-ETC.
+- ETC.
 
 
 ---
